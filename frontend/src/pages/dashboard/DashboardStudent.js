@@ -1,6 +1,6 @@
 // src/pages/dashboard/DashboardStudent.jsx
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from 'axios';
 import Header from '../../components/Header';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ const DashboardStudent = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/job_posting');
+        const res = await axios.get('api/job_posting');
         setJobs(res.data);
         setFilteredJobs(res.data);
       } catch (err) {
@@ -47,8 +47,8 @@ const DashboardStudent = () => {
 
   const img = (logo) =>
     logo
-      ? `http://localhost:5000/uploads/${logo}`
-      : `http://localhost:5000/uploads/default.png`;
+      ? `/uploads/${logo}`
+      : `/uploads/default.png`;
 
   return (
     <div className="min-h-screen bg-[#9AE5F2]">
