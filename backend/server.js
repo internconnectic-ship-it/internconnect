@@ -18,14 +18,23 @@ const app = express();
 
 // ✅ CORS ต้องมาก่อนทุกอย่าง
 app.use(cors({
-  origin: [
-    "http://localhost:3000",   // สำหรับ dev
-    "https://sparkling-brigadeiros-c96e49.netlify.app" // สำหรับ production
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // ✅ เพิ่ม OPTIONS ด้วย
-  allowedHeaders: ["Content-Type", "Authorization"],    // ✅ บอก header ที่อนุญาต
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      "http://localhost:3000",
+      "https://sparkling-brigadeiros-c96e49.netlify.app",
+      /\.netlify\.app$/   // ✅ allow ทุก subdomain ของ netlify.app
+    ];
+    if (!origin || allowedOrigins.some(o => 
+         o instanceof RegExp ? o.test(origin) : o === origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
+
 
 // ✅ รองรับ preflight request (OPTIONS)
 app.options('*', (req, res) => {
