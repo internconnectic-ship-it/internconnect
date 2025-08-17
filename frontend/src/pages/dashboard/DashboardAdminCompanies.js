@@ -1,6 +1,6 @@
 // src/pages/dashboard/DashboardAdminCompanies.js
 import React, { useEffect, useMemo, useState } from 'react';
-import api from '../../axios'; 
+import api from './axios';
 import Header from '../../components/Header';
 
 const PlaceholderLogo = ({ name }) => {

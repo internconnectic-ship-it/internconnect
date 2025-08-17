@@ -1,6 +1,6 @@
 // src/pages/dashboard/DashboardCompanyProfile.jsx
 import { useEffect, useState } from 'react';
-import api from '../../axios'; // ✅ ใช้ axios instance ที่เราสร้างไว้
+import api from './axios';// ✅ ใช้ axios instance ที่เราสร้างไว้
 import Header from '../../components/Header';
 
 const DashboardCompanyProfile = () => {

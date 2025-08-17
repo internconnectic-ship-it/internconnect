@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
-import api from '../../axios'; // ✅ ใช้ instance เดียวกันทุกที่
+import api from './axios';// ✅ ใช้ instance เดียวกันทุกที่
 
 const DashboardCompanyStatus = () => {
   const [applications, setApplications] = useState([]);

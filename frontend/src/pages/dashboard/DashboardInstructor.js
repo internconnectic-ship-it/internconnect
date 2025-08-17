@@ -1,6 +1,6 @@
 // src/pages/dashboard/DashboardInstructor.jsx
 import React, { useEffect, useState } from 'react';
-import api from '../../axios';   // ✅ เปลี่ยนมาใช้ไฟล์ axios.js
+import api from './axios';  // ✅ เปลี่ยนมาใช้ไฟล์ axios.js
 import Header from '../../components/Header';
 
 const DashboardInstructor = () => {

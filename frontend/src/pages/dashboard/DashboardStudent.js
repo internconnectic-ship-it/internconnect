@@ -1,6 +1,6 @@
 // src/pages/dashboard/DashboardStudent.jsx
 import React, { useEffect, useState } from 'react';
-import api from '../../axios';   // ✅ ใช้ api แทน axios
+import api from './axios'; // ✅ ใช้ api แทน axios
 import Header from '../../components/Header';
 import { useNavigate } from 'react-router-dom';
 

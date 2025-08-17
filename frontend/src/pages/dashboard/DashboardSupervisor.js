@@ -1,6 +1,6 @@
 // src/pages/dashboard/DashboardSupervisor.jsx
 import React, { useEffect, useState } from 'react';
-import api from '../../axios';   // ✅ ใช้ axios instance แทน axios ตรงๆ
+import api from './axios'; // ✅ ใช้ axios instance แทน axios ตรงๆ
 import Header from '../../components/Header';
 import { useNavigate } from 'react-router-dom';
 
