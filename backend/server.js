@@ -15,10 +15,18 @@ const reportRoutes = require('./routes/reportRoutes');
 require('dotenv').config();
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://sparkling-brigadeiros-c96e49.netlify.app"
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 app.use(express.json());
 
-// ✅ กำหนดเส้นทาง API
 app.use('/api/auth', authRoutes);
 app.use('/api/student', studentRoutes);
 app.use('/api/company', companyRoutes);
@@ -31,11 +39,7 @@ app.use('/uploads', express.static('uploads'));
 app.use('/api/internship', internshipRoutes);
 app.use('/api/evaluation', evaluationRoutes);
 app.use('/api/reports', reportRoutes);
-// app.use(cors({
-//   origin: ["https://sparkling-brigadeiros-c96e49.netlify.app/"], // ✅ ใส่ URL ของ Netlify ของคุณ
-//   methods: ["GET", "POST", "PUT", "DELETE"],
-//   credentials: true
-// }));
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`🚀 Server started on port ${PORT}`);
