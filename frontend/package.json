@@ -19,7 +19,6 @@
   "test": "react-scripts test",
   "eject": "react-scripts eject"
 },
-  "proxy": "https://internconnect-shq7.onrender.com",
   "browserslist": {
     "production": [
       ">0.2%",

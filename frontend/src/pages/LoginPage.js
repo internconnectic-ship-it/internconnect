@@ -16,7 +16,9 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post('${API_URL}/api/auth/login', form);
+      const res = await axios.post('${API_URL}/api/auth/login', form)
+      .then(res => console.log(res.data))
+      .catch(err => console.error(err));
       const { token, role, id, email, name } = res.data;
 
       localStorage.setItem('token', token);
