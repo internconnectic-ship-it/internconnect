@@ -1,6 +1,6 @@
 // src/pages/dashboard/DashboardAdminApprovals.jsx
 import React, { useEffect, useMemo, useState } from 'react';
-import api from './axios';  // ⬅️ ใช้ api จาก config กลาง
+import api from '../../axios';   // ⬅️ ใช้ api จาก config กลาง
 import Header from '../../components/Header';
 
 const PlaceholderAvatar = ({ name }) => {

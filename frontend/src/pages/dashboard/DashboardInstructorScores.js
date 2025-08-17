@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/Header';
 import EvaluationCard from '../../components/EvaluationCard';
-import api from './axios'; // ✅ ใช้ instance เดียวกับทุกหน้า
+import api from '../../axios';  // ✅ ใช้ instance เดียวกับทุกหน้า
 
 const DashboardInstructorScores = () => {
   const [students, setStudents] = useState([]);

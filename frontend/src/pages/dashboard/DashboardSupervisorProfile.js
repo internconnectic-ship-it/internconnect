@@ -1,6 +1,6 @@
 // src/pages/dashboard/DashboardSupervisorProfile.jsx
 import React, { useState, useEffect } from 'react';
-import api from './axios';   // ✅ ใช้ axios instance
+import api from '../../axios';   // ✅ ใช้ axios instance
 import Header from '../../components/Header';
 
 const DashboardSupervisorProfile = () => {

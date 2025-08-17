@@ -1,6 +1,6 @@
 // src/pages/dashboard/DashboardInstructorAssign.jsx
 import React, { useEffect, useState } from 'react';
-import api from './axios'; // ✅ ใช้ axios instance
+import api from '../../axios'; // ✅ ใช้ axios instance
 import Header from '../../components/Header';
 
 const DashboardInstructorAssign = () => {

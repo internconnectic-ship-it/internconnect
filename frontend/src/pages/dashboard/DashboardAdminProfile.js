@@ -1,6 +1,6 @@
 // src/pages/dashboard/DashboardAdminProfile.jsx
 import React, { useEffect, useState } from 'react';
-import api from './axios';   // ✅ ใช้ axios instance ที่ config แล้ว
+import api from '../../axios';    // ✅ ใช้ axios instance ที่ config แล้ว
 import Header from '../../components/Header';
 
 const DashboardAdminProfile = () => {

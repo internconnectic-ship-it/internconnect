@@ -1,6 +1,6 @@
 // src/pages/dashboard/DashboardAdminReports.jsx
 import React, { useEffect, useMemo, useState } from 'react';
-import api from './axios';  // ✅ ใช้ axios instance
+import api from '../../axios';  // ✅ ใช้ axios instance
 import { Bar } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
