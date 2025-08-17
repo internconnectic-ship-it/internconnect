@@ -1,7 +1,7 @@
 // src/axios.js
 import axios from "axios";
 
-const instance = axios.create({
+const api = axios.create({
   baseURL: "https://internconnect-shq7.onrender.com/api",
   withCredentials: true
 });
