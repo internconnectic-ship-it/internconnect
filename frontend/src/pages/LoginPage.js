@@ -7,7 +7,7 @@ const LoginPage = () => {
   const [form, setForm] = useState({ email: '', password: '' });
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = process.env.REACT_APP_API_URL || "http://localhost:5000"; 
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -16,9 +16,8 @@ const LoginPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${API_URL}/api/auth/login`, form)
-      .then(res => console.log(res.data))
-      .catch(err => console.error(err));
+      const res = await axios.post(`${API_URL}/api/auth/login`, form);
+      console.log("Login Response:", res.data);
       const { token, role, id, email, name } = res.data;
 
       localStorage.setItem('token', token);
