@@ -1,6 +1,6 @@
 // src/pages/dashboard/DashboardAdminCompanies.js
 import React, { useEffect, useMemo, useState } from 'react';
-import api from '../../axios'; 
+import api from "../../axios";
 import Header from '../../components/Header';
 
 const PlaceholderLogo = ({ name }) => {
@@ -27,7 +27,7 @@ const DashboardAdminCompanies = () => {
   useEffect(() => {
     (async () => {
       try {
-        const res = await axios.get('/api/admin/companies/approved');
+        const res = await api.get('/api/admin/companies/approved');
         setCompanies(Array.isArray(res.data) ? res.data : []);
       } catch (err) {
         console.error('❌ ไม่สามารถดึงข้อมูลบริษัทได้:', err);

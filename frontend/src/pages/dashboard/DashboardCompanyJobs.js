@@ -1,6 +1,6 @@
 // frontend/src/pages/company/JobPostForm.js
 import React, { useState } from 'react';
-import api from '../../axios';  // ✅ ใช้ axios instance ที่เราสร้าง
+import api from "../../axios"; // ✅ ใช้ axios instance ที่เราสร้าง
 import Header from '../../components/Header';
 
 const JobPostForm = () => {

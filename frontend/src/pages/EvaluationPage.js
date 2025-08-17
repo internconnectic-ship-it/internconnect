@@ -1,6 +1,6 @@
 // src/pages/EvaluationPage.js
 import React from 'react';
-import api from '../../axios'; 
+import axios from 'axios'; 
 import { useParams } from 'react-router-dom';
 import EvaluationCompanyForm from './EvaluationCompanyForm';
 import EvaluationSupervisorForm from './EvaluationSupervisorForm';
