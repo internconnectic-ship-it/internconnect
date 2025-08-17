@@ -1,6 +1,6 @@
 // src/pages/LoginPage.jsx
 import React, { useState } from 'react';
-import api from './axios';
+import api from '../axios';
 import { useNavigate, Link } from 'react-router-dom';
 
 const LoginPage = () => {
