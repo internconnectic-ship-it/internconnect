@@ -16,17 +16,23 @@ require('dotenv').config();
 
 const app = express();
 
+// ✅ CORS ต้องมาก่อนทุกอย่าง
 app.use(cors({
   origin: [
-    "http://localhost:3000",
-    "https://sparkling-brigadeiros-c96e49.netlify.app"
+    "http://localhost:3000",   // สำหรับ dev
+    "https://sparkling-brigadeiros-c96e49.netlify.app" // สำหรับ production
   ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // ✅ เพิ่ม OPTIONS ด้วย
+  allowedHeaders: ["Content-Type", "Authorization"],    // ✅ บอก header ที่อนุญาต
   credentials: true
 }));
 
+// ✅ รองรับ preflight request (OPTIONS)
+app.options('*', cors());
+
 app.use(express.json());
 
+// ✅ Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/student', studentRoutes);
 app.use('/api/company', companyRoutes);
