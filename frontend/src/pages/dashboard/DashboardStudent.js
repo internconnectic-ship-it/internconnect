@@ -1,6 +1,6 @@
 // src/pages/dashboard/DashboardStudent.jsx
 import React, { useEffect, useState } from 'react';
-import api from 'axios';
+import api from '../../axios';   // ✅ ใช้ api แทน axios
 import Header from '../../components/Header';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ const DashboardStudent = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await axios.get('api/job_posting');
+        const res = await api.get('/api/job_posting');
         setJobs(res.data);
         setFilteredJobs(res.data);
       } catch (err) {
@@ -47,8 +47,8 @@ const DashboardStudent = () => {
 
   const img = (logo) =>
     logo
-      ? `/uploads/${logo}`
-      : `/uploads/default.png`;
+      ? `api/uploads/${logo}`
+      : `api/uploads/default.png`;
 
   return (
     <div className="min-h-screen bg-[#9AE5F2]">
