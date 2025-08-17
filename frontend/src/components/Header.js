@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from 'axios';
 
 import StudentMenu from './headers/StudentMenu';
 import CompanyMenu from './headers/CompanyMenu';
@@ -17,7 +17,7 @@ const Header = () => {
 
   useEffect(() => {
     if (role && userId) {
-      axios.get(`http://localhost:5000/api/${role}/${userId}`)
+      axios.get(`/api/${role}/${userId}`)
         .then(res => {
           const data = res.data;
 
@@ -78,7 +78,7 @@ const Header = () => {
       <div className="flex items-center gap-4">
         <span className="flex items-center gap-2">
           <img
-            src={`http://localhost:5000/uploads/${profileImage}`}
+            src={`api/uploads/${profileImage}`}
             alt="profile"
             className="profile-image"
             width="64"
